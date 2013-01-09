@@ -19,6 +19,17 @@ version 0.0100
         port => 8125,
         sample_rate => 0.5,
         prefix => 'myapp',
+        whitelist => sub {
+            my ($req) = @_;
+            ...
+            # Return true to process, false to ignore
+        },
+        stat_to_name_mapper => sub {
+            my ($req) = @_;
+            ...
+            # Return what to name the stat for this request
+            return $req->path;
+        },
     );
 
     builder {
