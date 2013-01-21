@@ -24,7 +24,7 @@ version 0.0100
             ...
             # Return true to process, false to ignore
         },
-        stat_to_name_mapper => sub {
+        stat_name_mapper => sub {
             my ($req) = @_;
             ...
             # Return what to name the stat for this request

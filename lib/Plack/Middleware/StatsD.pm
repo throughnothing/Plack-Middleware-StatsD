@@ -47,7 +47,7 @@ sub call {
         my $path = $self->stat_name_mapper->( $req );
 
         # Log the response time ( in ms )
-        my $time = ( $end - $start ) / 1000;
+        my $time = ( $end - $start ) * 1000;
         $self->_sd->timing( $self->_stat( "$path.time" ), $time );
 
         # Increment code counter
@@ -81,7 +81,7 @@ sub _stat { shift->prefix . '.' . shift }
             ...
             # Return true to process, false to ignore
         },
-        stat_to_name_mapper => sub {
+        stat_name_mapper => sub {
             my ($req) = @_;
             ...
             # Return what to name the stat for this request
