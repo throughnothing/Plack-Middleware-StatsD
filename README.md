@@ -4,7 +4,7 @@ Plack::Middleware::StatsD - Plack middleware for logging request/response data w
 
 # VERSION
 
-version 0.0100
+version 0.0200
 
 # SYNOPSIS
 
